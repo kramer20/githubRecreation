@@ -47,3 +47,7 @@ ul.fourList {
   margin-top: 12px; }
   ul.fourList li {
     display: inline-block; }
+
+button {
+  float: right;
+  margin-right: 196px; }
