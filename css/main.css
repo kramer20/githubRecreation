@@ -49,7 +49,7 @@ ul.fourList {
   ul.fourList li {
     display: inline-block; }
 
-button {
+#edit {
   float: right;
   margin-right: 196px; }
 
@@ -59,5 +59,14 @@ img.myProfPic {
   border-radius: 5px; }
 
 .form-groupTwo {
-  width: 190px;
-  margin-top: 5px; }
+  width: 250px;
+  margin-top: 20px;
+  display: inline-block; }
+
+ul.searchList {
+  display: inline-block; }
+  ul.searchList li {
+    display: inline-block; }
+
+#search {
+  display: inline; }

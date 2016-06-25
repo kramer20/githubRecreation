@@ -17,11 +17,18 @@ $( document ).ready(function() {
       }
   	});	
 
-	//code for repositories etc.
+	//code for repositories
 	$.ajax({
   	url: ' https://api.github.com/users/kramer20/repos',
   	type:"GET",
-  	success: function (myhub) {
+  	success: function (repositories) {
+
+    
+    var repo = repositories;
+    var updated = moment(repositories.updated_at).startOf('hour').fromNow();      
+    repo.forEach(function (info) {
+      $(".repoSection").append('<div class="col-lg-9 repoLeft"><a href="repositories.html_url" class="repoName">'+info.name+'</a><p class="updated">'+updated+'</p><hr></div><div class="col-lg-3 repoRight"><ul class="repoList"><li class="language">'+info.language+'</li><li class="star">'+info.stargazers_count+'</li><li class="fork">'+info.forks_count+'<hr></ul>');
+    });
 
   		}
   	});	

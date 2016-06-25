@@ -73,12 +73,13 @@ ul.fourList {
 
 
 	}
+
+	
 }
 
-button {
+#edit {
 	float:right;
 	margin-right:196px;
-
 }
 
 img.myProfPic {
@@ -88,6 +89,19 @@ img.myProfPic {
 }
 
 .form-groupTwo {
-	width:190px;
-	margin-top:5px;
+	width:250px;
+	margin-top:20px;
+	display:inline-block;
+}
+
+ul.searchList {
+	display:inline-block;
+
+		li {
+			display:inline-block;
+		}
+}
+
+#search {
+	display:inline;
 }

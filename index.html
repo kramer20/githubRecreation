@@ -50,28 +50,35 @@
   						<li class="active"><a data-toggle="tab" href="#overview"><img src="images/person.svg" class="person">Overview</a></li>
   						<li><a data-toggle="tab" href="#repositories"><img src="images/repo.svg" class="repo">Repositories</a></li>
   						<li><a data-toggle="tab" href="#publicActivity"><img src="images/rss.svg" class="rss">Public activity</a></li>
-  						<button type="button" class="btn btn-secondary"><img src="images/pencil.svg" class="pencil">Edit Profile</button>
+  						<button type="button" id ="edit" class="btn btn-secondary"><img src="images/pencil.svg" class="pencil">Edit Profile</button>
 					</ul>
 
-						<div class="searchRow">
-							<div class="form-groupTwo">
-  									<input type="text" class="form-control" id="usr" placeholder="Search GitHub">
-								</div>
-									<ul class="threeLists">
-										<li>Pull requests</li>
-										<li>Issues</li>
-										<li>Gist</li>
-									</ul>	
-
-						</div>
-								
+						
 							<div class="tab-content">
   								<div id="overview" class="tab-pane fade in active">
    									 <p></p>
   								</div>
- 									 <div id="repositories" class="tab-pane fade">
 
-   										 <p></p>
+ 									 <div id="repositories" class="tab-pane fade">
+ 									 	<div class="searchRow">
+											<div class="form-groupTwo">
+  												<input type="text" class="form-control" id="search" placeholder="Find a repository...">
+  											</div>			
+												<ul class="searchList">
+													<button type="button" class="btn btn-secondary" id="search">Search</button>
+													<li>All</li>
+													<li>Public</li>
+													<li>Private</li>
+													<li>Sources</li>
+													<li>Forks</li>
+													<li>Mirrors</li>
+													<button type="button" class="btn btn-success" id="new"><img src="images/repo.svg" class="repoTwo">New</button>
+												</ul>	
+										</div>
+										<hr>
+   											 <div class="repoSection">
+   											 </div>
+
  								 	</div>
  								 		<div id="publicActivity" class="tab-pane fade">
    									 		<p></p>
