@@ -12,8 +12,9 @@ $( document ).ready(function() {
       var email = myhub.email;
       var login = myhub.login;
       var name = myhub.name;
+      var bio = myhub.bio;
   		var profile = myhub.avatar_url;
-    	$(".rightCol").append('<div class="col-lg-3 col-md-3 contentRight"><div class="picBox"><img class="myProfPic" src="'+profile+'"></div><div class="userInfo"><p class="name">'+name+'</p><p class="login">'+login+'</p><hr><a href="mailto:mkramer2089@gmail.com" class="email">'+email+'</a><p class="joined">Joined on '+joined+'</p><hr><div class="col-lg-4 <a href="https://github.com/kramer20/followers" class="followers">'+followers+' Follower</a><a href="https://github.com/stars" class="starred">0 Starred</a><a href="https://github.com/kramer20/following" class="following">'+following+' Following</a></div></div>');
+    	$(".leftCol").append('<div class="col-lg-4 col-md-4 contentLeft"><div class="picBox"><img class="myProfPic" src="'+profile+'"></div><div class="userInfo"><p class="name">'+name+'</p><p class="login">'+login+'</p><p class="bio">'+bio+'</p><hr class="bioLine"><a href="mailto:mkramer2089@gmail.com" class="email"><img src="images/mail.svg" class="mail">'+email+'</a><p class="joined"><img src="images/clock.svg" class="clock">Joined on '+joined+'</p><hr class="emailLine"><div class="col-lg-4 followersOne"><a href="https://github.com/kramer20/followers" class="followers">'+followers+'</a></div><div class="col-lg-4 starredOne"><a href="https://github.com/stars" class="starred">0</a></div><div class="col-lg-4 followingOne"><a href="https://github.com/kramer20/following" class="following">'+following+'</a></div><div class="col-lg-4 followersTwo"><a href="https://github.com/kramer20/followers" class="followersText">Followers</a></div><div class="col-lg-4 starredTwo"><a href="https://github.com/stars" class="starredText">Starred</a></div><div class="col-lg-4 followingTwo"><a href="https://github.com/kramer20/following" class="followingText">Following</a></div></div></div>');
       }
   	});	
 

@@ -1,6 +1,7 @@
 $accent-color:#F5F5F5;
 $font-blue:#4078C0;
-$font-box;#DBDBDB;
+$font-box:#DBDBDB;
+$accent-font:#66666A;
 
 body {
 	background-color:#FFFFFF;
@@ -23,7 +24,6 @@ body {
 			padding-left:5px;
 			width:355px;
 			font-size: 13px;
-			color:$font-box;
 		}
 }
 
@@ -80,11 +80,11 @@ ul.fourList {
 	
 	li {
 	display:inline-block;
+	}	
+}
 
-
-	}
-
-	
+.row.contentRow {
+	margin-top:20px;
 }
 
 #edit {
@@ -93,11 +93,46 @@ ul.fourList {
 }
 
 img.myProfPic {
-	margin:0 auto;
-	display:block;
+	margin-left:215px;
 	border-radius:5px;
+	height:230px;
 }
 
+p.name,.login,.bio {
+	text-align:left;
+	margin-left:214px;
+	margin-bottom:0;
+}
+
+.name {
+	font-size:25px;
+	font-weight:bold;
+	margin-top:10px;
+}
+
+.login {
+	font-size:22px;
+	color: $accent-font;
+	margin-top:-9px;
+}
+
+.bio {
+	color:$accent-font;
+	margin-top:10px;
+}
+
+a.email,.joined {
+	margin-left:214px;
+}
+
+a.email:hover {
+	color:$font-blue;
+}
+
+hr.bioLine, .emailLine {
+	width:243px;
+	margin-left:214px;
+}
 .form-groupTwo {
 	width:250px;
 	margin-top:20px;
