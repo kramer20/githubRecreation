@@ -125,13 +125,68 @@ a.email,.joined {
 	margin-left:214px;
 }
 
-a.email:hover {
-	color:$font-blue;
+a.email {
+	margin-bottom:10px;
+
+	&:hover {
+		color:$font-blue;
+	}	
 }
 
-hr.bioLine, .emailLine {
+hr.bioLine, .emailLine, .bottomLine {
 	width:243px;
 	margin-left:214px;
+	margin-bottom:12px;
+	margin-top:12px;
+}
+
+img.clock, .mail {
+	margin-right:10px;
+
+}
+
+ul.numberCol {
+	margin-left:145px;
+	margin-top:12px;
+	margin-bottom:-12px;
+	
+	li {
+	display:inline-block;
+	padding-left:60px;
+	font-weight:bold;
+
+	}	
+
+	a {
+		text-decoration: none;
+		font-size: 30px;
+		text-align: center;
+
+		&:hover {
+		color:$font-blue;
+		}
+	}
+}
+
+ul.wordCol {
+	margin-left:152px;
+	margin-top:0;
+	
+	li {
+	display:inline-block;
+	padding-left:37px;
+	}	
+
+	a {
+		text-decoration: none;
+		font-size: 11px;
+		text-align: center;
+		color:$accent-font;
+
+		&:hover {
+		color:$accent-font;
+		}
+	}
 }
 .form-groupTwo {
 	width:250px;

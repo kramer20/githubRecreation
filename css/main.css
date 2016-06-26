@@ -91,12 +91,48 @@ p.name, .login, .bio {
 a.email, .joined {
   margin-left: 214px; }
 
-a.email:hover {
-  color: #4078C0; }
+a.email {
+  margin-bottom: 10px; }
+  a.email:hover {
+    color: #4078C0; }
 
-hr.bioLine, .emailLine {
+hr.bioLine, .emailLine, .bottomLine {
   width: 243px;
-  margin-left: 214px; }
+  margin-left: 214px;
+  margin-bottom: 12px;
+  margin-top: 12px; }
+
+img.clock, .mail {
+  margin-right: 10px; }
+
+ul.numberCol {
+  margin-left: 145px;
+  margin-top: 12px;
+  margin-bottom: -12px; }
+  ul.numberCol li {
+    display: inline-block;
+    padding-left: 60px;
+    font-weight: bold; }
+  ul.numberCol a {
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center; }
+    ul.numberCol a:hover {
+      color: #4078C0; }
+
+ul.wordCol {
+  margin-left: 152px;
+  margin-top: 0; }
+  ul.wordCol li {
+    display: inline-block;
+    padding-left: 37px; }
+  ul.wordCol a {
+    text-decoration: none;
+    font-size: 11px;
+    text-align: center;
+    color: #66666A; }
+    ul.wordCol a:hover {
+      color: #66666A; }
 
 .form-groupTwo {
   width: 250px;
