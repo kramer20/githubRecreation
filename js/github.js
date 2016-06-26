@@ -28,7 +28,7 @@ $( document ).ready(function() {
     var repo = repositories;
     var updated = moment(repositories.updated_at).startOf('hour').fromNow();      
     repo.forEach(function (info) {
-      $(".repoSection").append('<div class="col-lg-9 repoLeft"><a href="repositories.html_url" class="repoName">'+info.name+'</a><p class="updated">'+updated+'</p></div><hr><div class="col-lg-3 repoRight"><ul class="repoList"><li class="language">'+info.language+'</li><li class="star">'+info.stargazers_count+'</li><li class="fork">'+info.forks_count+'</li></ul></div><hr>');
+      $(".repoSection").append('<div class="col-lg-8 repoLeft"><a href="info.html_url" class="repoName">'+info.name+'</a><p class="updated">Updated '+updated+'</p><hr class="repoBorder"></div><div class="col-lg-4 repoRight"><ul class="repoList"><li class="language">'+info.language+'</li><li class="star"><a href="info.stargazers_url" class="starLink"><img src="images/star.svg" class="starPic">'+info.stargazers_count+'</a></li><li class="fork"><a href="info.forks_url" class="forksLink"><img src="images/git-branch.svg" class="branch">'+info.forks_count+'</a></li></ul></div>');
     });
 
   		}

@@ -2,6 +2,8 @@ $accent-color:#F5F5F5;
 $font-blue:#4078C0;
 $font-box:#DBDBDB;
 $accent-font:#66666A;
+$tab-color:#666666;
+
 
 body {
 	background-color:#FFFFFF;
@@ -89,7 +91,19 @@ ul.fourList {
 
 #edit {
 	float:right;
-	margin-right:196px;
+	height:27px;
+	font-size:13px;
+	font-weight:bold;
+	background-color:$accent-color;
+	margin-top:5px;
+
+	&:hover {
+		background-color:darken($accent-color,8);
+	}
+
+	img {
+		padding-bottom:7px;
+	}
 }
 
 img.myProfPic {
@@ -161,6 +175,7 @@ ul.numberCol {
 		text-decoration: none;
 		font-size: 30px;
 		text-align: center;
+		outline: 0;
 
 		&:hover {
 		color:$font-blue;
@@ -182,6 +197,7 @@ ul.wordCol {
 		font-size: 11px;
 		text-align: center;
 		color:$accent-font;
+		outline: 0;
 
 		&:hover {
 		color:$accent-font;
@@ -190,18 +206,128 @@ ul.wordCol {
 }
 .form-groupTwo {
 	width:250px;
-	margin-top:20px;
+	margin-top:14px;
 	display:inline-block;
 }
 
 ul.searchList {
 	display:inline-block;
+	vertical-align:2px;
+	padding-left:18px;
 
 		li {
 			display:inline-block;
+			padding:3px;
+			color:$font-blue;
+
+			&:hover {
+				text-decoration: underline;
+				cursor:pointer;
+			}
 		}
 }
 
 #search {
 	display:inline;
+	width:268px;
+}
+
+#searchBtn {
+	font-weight:bold;
+	background-color:$accent-color;
+	font-size:12px;
+	height:34px;
+	margin-right:12px;
+	&:hover {
+		background-color:darken($accent-color,8);
+	}
+}
+
+hr.searchLine {
+	width:710px;
+	margin-left:0;
+	margin-top:3px;
+}
+
+ul.nav {
+	width:708px;
+	a {
+		color:$tab-color;
+		outline: 0;
+
+		&:hover {
+			color:black;
+			background-color:white;
+			border:none;
+		}
+	}
+
+	img {
+		padding-right:5px;
+	}
+}
+
+#newBtn {
+	font-size:12px;
+	font-weight:bold;
+
+	img {
+		margin-right: 4px;
+	}
+}
+
+.repoLeft {
+	padding-left:0;
+}
+
+.repoName {
+	font-size:20px;
+	font-weight:bold;
+	
+
+	&:hover {
+		color:$font-blue;
+		text-decoration: bold;
+	}
+}
+
+.updated {
+	font-size:13px;
+	margin-top:5px;
+	color:$accent-font;
+}
+
+hr.repoBorder {
+	width:710px;
+}
+
+ul.repoList {
+	display:inline-block;
+	padding-left:0;
+	margin-top:10px;
+	margin-left:-57px;
+
+
+	li {
+		display: inline-block;
+		padding-left:12px;
+		font-size: 12px;
+		font-weight: bold;
+		color:$accent-font;		
+	}
+
+		a {
+			color:$accent-font;
+			text-align:right;
+
+			&:hover {
+				color:$font-blue;
+				text-decoration: none;
+			}
+		}
+
+			img {
+				padding-right:2px;
+				margin-bottom: 4px;
+			}
 }
