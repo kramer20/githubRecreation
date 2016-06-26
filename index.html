@@ -5,6 +5,7 @@
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link href="css/main.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 </head>
 <body>
 
@@ -19,9 +20,9 @@
   									<input type="text" class="form-control" id="usr" placeholder="Search GitHub">
 								</div>
 									<ul class="threeLists">
-										<li>Pull requests</li>
-										<li>Issues</li>
-										<li>Gist</li>
+										<li><a href="https://github.com/pulls" class="pullLink">Pull requests</a></li>
+										<li><a href="https://github.com/issues" class="issuesLink">Issues</a></li>
+										<li><a href="https://gist.github.com/" class="gistLink">Gist</a></li>
 									</ul>	
 						</div>	
 
@@ -77,11 +78,19 @@
 										</div>
 										<hr>
    											 <div class="repoSection">
+
    											 </div>
 
  								 	</div>
  								 		<div id="publicActivity" class="tab-pane fade">
-   									 		<p></p>
+   									 		<div class="col-lg-1 activLeft">
+   									 			
+   									 			</div>
+   									 				<hr>
+   									 					<div class="col-lg-11 activRight">
+   									 						<ul class="repoList"><li class="language">'+info.language+'</li><li class="star">'+info.stargazers_count+'</li><li class="fork">'+info.forks_count+'</li><hr></ul>');
+   									 					</div>	
+   									 						<hr>
  									 	</div>
 							</div>
 
