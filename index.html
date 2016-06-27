@@ -51,7 +51,7 @@
   						<li class="active"><a data-toggle="tab" href="#overview"><img src="images/person.svg" class="person">Overview</a></li>
   						<li><a data-toggle="tab" href="#repositories"><img src="images/repo.svg" class="repo">Repositories</a></li>
   						<li><a data-toggle="tab" href="#publicActivity"><img src="images/rss.svg" class="rss">Public activity</a></li>
-  						<button type="button" class="btn btn-default" id="edit"><img src="images/pencil.svg" class="pencil">Edit Profile</button>
+  						<a href="https://github.com/settings/profile"><button type="button" class="btn btn-default" id="edit"><img src="images/pencil.svg" class="pencil">Edit Profile</button></a>
 					</ul>
 
 						
@@ -63,10 +63,12 @@
  									 <div id="repositories" class="tab-pane fade">
  									 	<div class="searchRow">
 											<div class="form-groupTwo">
-  												<input type="text" class="form-control" id="search" placeholder="Find a repository...">
+  												<form>
+  												<input type="text" class="form-control" id="search" placeholder="Find a repository..."></form>
   											</div>			
 												<ul class="searchList">
 													<button type="button" id="searchBtn" class="btn btn-default">Search</button>
+													
 													<li>All</li>
 													<li>Public</li>
 													<li>Private</li>
@@ -84,7 +86,7 @@
  								 	</div>
  								 		<div id="publicActivity" class="tab-pane fade">
    									 		<div class="activeSection">
-   									 			
+
    									 		</div>
    									 				<hr>
    									 				

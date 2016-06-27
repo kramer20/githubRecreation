@@ -19,20 +19,35 @@ $( document ).ready(function() {
   	});	
 
 	//code for repositories
+  // $("form").on("submit",function(e){
+  // e.preventDefault();
+
+  //   var search = $("#search").val();
+    
+  //   $("#search").val("");
+
 	$.ajax({
   	url: 'https://api.github.com/users/kramer20/repos',
   	type:"GET",
   	success: function (repositories) {
 
     var repo = repositories;
-         
+    // var dates = [];
+    // dates.sort();
+
+    // dates.forEach(function (order){
+    //   order = info.created_at(order);
+    // });
+
     repo.forEach(function (info) {
-      var updated = moment(repositories.updated_at).startOf('hour').fromNow(); 
-      $(".repoSection").append('<div class="col-lg-8 repoLeft"><a href="info.html_url" class="repoName">'+info.name+'</a><p class="updated">Updated '+updated+'</p><hr class="repoBorder"></div><div class="col-lg-4 repoRight"><ul class="repoList"><li class="language">'+info.language+'</li><li class="star"><a href="info.stargazers_url" class="starLink"><img src="images/star.svg" class="starPic">'+info.stargazers_count+'</a></li><li class="fork"><a href="info.forks_url" class="forksLink"><img src="images/git-branch.svg" class="branch">'+info.forks_count+'</a></li></ul></div>');
+      var repoNameLink = info.html_url;
+      var updated = moment(info.created_at).startOf('hour').fromNow();
+      $(".repoSection").append('<div class="col-lg-8 repoLeft"><a href="'+repoNameLink+'" class="repoName">'+info.name+'</a><p class="description">'+info.description+'</p><p class="updated">Updated '+updated+'</p><hr class="repoBorder"></div><div class="col-lg-4 repoRight"><ul class="repoList"><li class="language">'+info.language+'</li><li class="star"><a href="info.stargazers_url" class="starLink"><img src="images/star.svg" class="starPic">'+info.stargazers_count+'</a></li><li class="fork"><a href="info.forks_url" class="forksLink"><img src="images/git-branch.svg" class="branch">'+info.forks_count+'</a></li></ul></div>');
     });
 
   		}
-  	});	
+  // });	
+});
 
 
   //code for activity tab
@@ -52,7 +67,7 @@ $( document ).ready(function() {
     var image = push.actor.avatar_url;
     var commitNum = push.payload.commits.sha;
 
-    var current = moment(activities.created_at).startOf('hour').fromNow(); 
+    var current = moment(push.created_at).startOf('hour').fromNow(); 
       $(".activeSection").append('<div class="pushInfo"><div class="symbols"><img src="images/git-commit.svg"></div><div class="time">'+current+'</div><div class="action"><a href="https://github.com/kramer20">'+login+'</a> pushed to <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><div class="details"><img src="'+image+'" class="smallImg"><div class="commits"><ul class="commitName"><li>'+commitNum+'</li></ul></div></div></div>');
     });  
 
