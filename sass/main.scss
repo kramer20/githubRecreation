@@ -96,6 +96,7 @@ ul.fourList {
 	font-weight:bold;
 	background-color:$accent-color;
 	margin-top:5px;
+	padding-top:3px;
 
 	&:hover {
 		background-color:darken($accent-color,8);
