@@ -331,3 +331,63 @@ ul.repoList {
 				margin-bottom: 4px;
 			}
 }
+
+.activeSection {
+	margin-top:10px;
+}
+
+.pushInfo {
+	padding-right:0;
+
+	.commitIcon {
+		display:inline-block;
+		height:30px;
+	}
+}
+
+.details {
+	margin-left:-24px;
+	padding-left:0;
+
+	.time {
+		font-size: 12px;
+		color:$accent-font;
+		font-weight: bold;
+	}
+	.action {
+		font-weight: bold;
+
+		a:hover {
+			color:$font-blue;
+		}	
+	}
+}
+
+.smallImg {
+	height:35px;
+	border-radius:2px;
+	margin-left: 2px;
+}
+
+ul.commitName{
+	display:inline-block;
+	padding-left:0;
+
+	li {
+		display:inline-block;
+		padding-right:5px;
+		font-size:11px;
+		vertical-align: top;
+
+		img.octoKitty {
+			margin-top: -2px;
+		}
+	}
+
+}
+
+hr.pushLine {
+	margin-left:-51px;
+	width:713px;
+}
+

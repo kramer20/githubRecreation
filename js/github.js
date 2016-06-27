@@ -50,7 +50,7 @@ $( document ).ready(function() {
 });
 
 
-  //code for activity tab
+  //code for push
 
     $.ajax({
     url: 'https://api.github.com/users/kramer20/events',
@@ -67,7 +67,15 @@ $( document ).ready(function() {
 
   return bigString;
 }
-    
+
+  function buildMessage(messages){
+      var bigString = "";
+      messages.forEach(function(message){
+      bigString += `<p>${message.message}</p>`;
+    });
+
+  return bigString;
+}  
     active.forEach(function (push) {
     var login = push.actor.login;
     var master = push.payload.ref;
@@ -76,12 +84,24 @@ $( document ).ready(function() {
     var image = push.actor.avatar_url;
     var commitNum = push.payload.commits;
     commitNum = buildCommits(commitNum);
+    var commitMsg = push.payload.commits;
+    commitMsg = buildMessage(commitMsg);
 
     var current = moment(push.created_at).startOf('hour').fromNow(); 
-      $(".activeSection").append('<div class="pushInfo"><div class="symbols"><img src="images/git-commit.svg"></div><div class="time">'+current+'</div><div class="action"><a href="https://github.com/kramer20">'+login+'</a> pushed to <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><div class="details"><img src="'+image+'" class="smallImg"><div class="commits"><ul class="commitName"><li>'+commitNum+'</li></ul></div></div></div>');
+      $(".activeSection").append('<div class="pushInfo col-lg-1"><img src="images/git-commit.svg" class="commitIcon"></div><div class="col-lg-11 details"><div class="time">'+current+'</div><div class="action"><a href="https://github.com/kramer20">'+login+'</a> pushed to <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><ul class="commitName"><li><img src="'+image+'" class="smallImg"></li><li><img class="octoKitty" src="images/mark-github.svg"></li><li>'+commitNum+'</li><li>'+commitMsg+'</li></ul><hr class="pushLine"></div>');
     });  
 
+//code for created
+    active.forEach(function (push) {
+      var login = push.actor.login;
+      var repoName = push.repo.name;
+      var current = moment(push.created_at).startOf('hour').fromNow(); 
+    $(".createdSection").append('<div class="created"><div class="actionTwo"><a href="https://github.com/kramer20">'+login+'</a> created branch <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><div class="time">'+current+'</div></div>')
 
+  });
     }
   });
+
+
+
 });
