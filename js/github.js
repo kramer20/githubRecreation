@@ -24,10 +24,10 @@ $( document ).ready(function() {
   	type:"GET",
   	success: function (repositories) {
 
-    
     var repo = repositories;
-    var updated = moment(repositories.updated_at).startOf('hour').fromNow();      
+         
     repo.forEach(function (info) {
+      var updated = moment(repositories.updated_at).startOf('hour').fromNow(); 
       $(".repoSection").append('<div class="col-lg-8 repoLeft"><a href="info.html_url" class="repoName">'+info.name+'</a><p class="updated">Updated '+updated+'</p><hr class="repoBorder"></div><div class="col-lg-4 repoRight"><ul class="repoList"><li class="language">'+info.language+'</li><li class="star"><a href="info.stargazers_url" class="starLink"><img src="images/star.svg" class="starPic">'+info.stargazers_count+'</a></li><li class="fork"><a href="info.forks_url" class="forksLink"><img src="images/git-branch.svg" class="branch">'+info.forks_count+'</a></li></ul></div>');
     });
 
@@ -41,6 +41,22 @@ $( document ).ready(function() {
     url: 'https://api.github.com/users/kramer20/events',
     type:"GET",
     success: function (activities) {
+
+    var active = activities;
+    
+    active.forEach(function (push) {
+    var login = push.actor.login;
+    var master = push.payload.ref;
+    var repoName = push.repo.name;
+    var url = push.repo.url;
+    var image = push.actor.avatar_url;
+    var commitNum = push.payload.commits.sha;
+
+    var current = moment(activities.created_at).startOf('hour').fromNow(); 
+      $(".activeSection").append('<div class="pushInfo"><div class="symbols"><img src="images/git-commit.svg"></div><div class="time">'+current+'</div><div class="action"><a href="https://github.com/kramer20">'+login+'</a> pushed to <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><div class="details"><img src="'+image+'" class="smallImg"><div class="commits"><ul class="commitName"><li>'+commitNum+'</li></ul></div></div></div>');
+    });  
+
+
     }
   });
 });
