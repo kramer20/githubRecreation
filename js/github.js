@@ -58,6 +58,15 @@ $( document ).ready(function() {
     success: function (activities) {
 
     var active = activities;
+
+    function buildCommits(commits){
+      var bigString = "";
+      commits.forEach(function(commit){
+      bigString += `<p>${commit.sha}</p>`;
+    });
+
+  return bigString;
+}
     
     active.forEach(function (push) {
     var login = push.actor.login;
@@ -65,7 +74,8 @@ $( document ).ready(function() {
     var repoName = push.repo.name;
     var url = push.repo.url;
     var image = push.actor.avatar_url;
-    var commitNum = push.payload.commits.sha;
+    var commitNum = push.payload.commits;
+    commitNum = buildCommits(commitNum);
 
     var current = moment(push.created_at).startOf('hour').fromNow(); 
       $(".activeSection").append('<div class="pushInfo"><div class="symbols"><img src="images/git-commit.svg"></div><div class="time">'+current+'</div><div class="action"><a href="https://github.com/kramer20">'+login+'</a> pushed to <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><div class="details"><img src="'+image+'" class="smallImg"><div class="commits"><ul class="commitName"><li>'+commitNum+'</li></ul></div></div></div>');
