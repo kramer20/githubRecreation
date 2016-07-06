@@ -76,32 +76,38 @@ $( document ).ready(function() {
 
   return bigString;
 }  
-    active.forEach(function (push) {
-    var login = push.actor.login;
-    var master = push.payload.ref;
-    var repoName = push.repo.name;
-    var url = push.repo.url;
-    var image = push.actor.avatar_url;
-    var commitNum = push.payload.commits;
-    commitNum = buildCommits(commitNum);
-    var commitMsg = push.payload.commits;
-    commitMsg = buildMessage(commitMsg);
 
-    var current = moment(push.created_at).startOf('hour').fromNow(); 
-      $(".activeSection").append('<div class="pushInfo col-lg-1"><img src="images/git-commit.svg" class="commitIcon"></div><div class="col-lg-11 details"><div class="time">'+current+'</div><div class="action"><a href="https://github.com/kramer20">'+login+'</a> pushed to <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><ul class="commitName"><li><img src="'+image+'" class="smallImg"></li><li><img class="octoKitty" src="images/mark-github.svg"></li><li>'+commitNum+'</li><li>'+commitMsg+'</li></ul><hr class="pushLine"></div>');
-    });  
+//     active.forEach(function (push) {
+//     var login = push.actor.login;
+//     var master = push.payload.ref;
+//     var repoName = push.repo.name;
+//     var url = push.repo.url;
+//     var image = push.actor.avatar_url;
+//     var commitNum = push.payload.commits;
+//     commitNum = buildCommits(commitNum);
+//     var commitMsg = push.payload.commits;
+//     commitMsg = buildMessage(commitMsg);
+//     var current = moment(push.created_at).startOf('hour').fromNow(); 
+//      var login = push.actor.login;
+//       var repoName = push.repo.name;
+//       var current = moment(push.created_at).startOf('hour').fromNow();
 
-//code for created
-    active.forEach(function (push) {
-      var login = push.actor.login;
-      var repoName = push.repo.name;
-      var current = moment(push.created_at).startOf('hour').fromNow(); 
-    $(".createdSection").append('<div class="created"><div class="actionTwo"><a href="https://github.com/kramer20">'+login+'</a> created branch <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><div class="time">'+current+'</div></div>')
+//     if (push === "master") {
+//       $(".activeSection").append('<div class="pushInfo col-lg-1"><img src="images/git-commit.svg" class="commitIcon"></div><div class="col-lg-11 details"><div class="time">'+current+'</div><div class="action"><a href="https://github.com/kramer20">'+login+'</a> pushed to <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><ul class="commitName"><li><img src="'+image+'" class="smallImg"></li><li><img class="octoKitty" src="images/mark-github.svg"></li><li>'+commitNum+'</li><li>'+commitMsg+'</li></ul><hr class="pushLine"></div>');
+//     } 
 
-  });
-    }
-  });
+//     else if (push === "branch") {
+//     $(".branchSection").append('<div class="branch"><div class="actionTwo"><a href="https://github.com/kramer20">'+login+'</a> created branch <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><div class="time">'+current+'</div></div>');
+//     }
 
-
-
+//     else {
+//     $(".repositorySection").append('<div class="repository"><div class="actionRepo"><a href="https://github.com/kramer20">'+login+'</a> created repository <a href="url" class="pushLink">'+repoName+'</a></div><div class="time">'+current+'</div></div>');
+//     }
+//   });
+// }
+}
 });
+});
+
+
+
