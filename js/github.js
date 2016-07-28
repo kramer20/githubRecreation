@@ -92,10 +92,11 @@ $( document ).ready(function() {
  function buildCommits(commits){
         var commitString = "";
         commits.forEach(function(commit){
-            commitString += `<p>${commit.sha}</p>`;
+            commitString += commit.sha;
+            newString = commitString.substring(0,7);
             
         });
-        return commitString;
+        return newString;
       };
 
   function buildMessage(messages){
