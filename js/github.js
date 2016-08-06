@@ -77,6 +77,8 @@ $( document ).ready(function() {
         var current = moment(push.created_at).fromNow(); 
          var login = push.actor.login;
         var repoName = push.repo.name;
+        var display = push.actor.display_login;
+        var branch = push.payload.ref_type
         //var current = moment(push.created_at).startOf('hour').fromNow();
 
         $(".activeSection").append('<div class="pushInfo col-lg-1"><img src="images/git-commit.svg" class="commitIcon"></div><div class="col-lg-11 details"><div class="time">'+current+'</div><div class="action"><a href="https://github.com/kramer20">'+login+'</a> pushed to <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><ul class="commitName"><li><img src="'+image+'" class="smallImg"></li><li><img class="octoKitty" src="images/mark-github.svg"></li><li><a href="linkUrl">'+commitNum+'</a></li><li>'+commitMsg+'</li></ul><hr class="pushLine"></div>');
@@ -84,8 +86,11 @@ $( document ).ready(function() {
        }
 
       else if (push.type === "branch") {
-        $(".activeSection").append('<div class="branch"><img src = "images/git-branch.svg"><a href="https://github.com/">'+login+'</a> created branch <a href="https://github.com/kramer20/githubRecreation/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a></div><div class="time">'+current+'</div></div>');
+        $(".activeSection").append('<div class="activity"><img src = "images/git-branch.svg"><a href="https://github.com/">'+login+display+'</a> created '+branch+' <a href="https://github.com/'+repoName+'/tree/master" class="master">master</a> at <a href="url" class="pushLink">'+repoName+'</a><div class="time">'+current+'</div></div>');
         }
+      else {
+        $(".activeSection").append('<div class="activity"><img src = "images/repo.svg"><a href="https://github.com/">'+login+display+'</a> created '+branch+' <a href="url" class="pushLink">'+repoName+'</a><div class="time">'+current+'</div></div>');
+      }  
       });
 
     }
